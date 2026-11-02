@@ -1,0 +1,662 @@
+[
+  {
+    "channel": "Safety Rules",
+    "text": "Residents are breaking the barangay curfew and walking around after the allowed hours."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "A driver keeps parking in the fire lane and blocking the emergency exit."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "May lumalabag sa curfew at nag-iikot pa rin sa barangay kapag bawal na."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "May mga sasakyan na humaharang sa fire exit at daanan ng ambulansya."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Gilapas sa mga residente ang lagda sa curfew ug nagsuroy-suroy pa human sa oras."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Naay nagparking sa fire lane ug gibabagan ang agianan sa emergency vehicle."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Motorcycles keep racing through the barangay after curfew and ignoring the speed limit."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "May mga nagtitinda sa bawal na lugar at hinaharangan ang emergency exit."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Adunay naglapas sa lagda sa barangay ug nagparking sa agianan sa ambulansya."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Residents set off fireworks in a crowded street against the barangay safety ordinance."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "The market vendors block the marked evacuation route in violation of community rules."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "May nagpapaputok sa mataong lugar kahit ipinagbabawal sa ordinansa."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Nilabag ng mga residente ang pagbabawal sa pagsusunog ng basura sa lugar."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Gilapas nila ang ordinansa pinaagi sa pagbutang og harang sa agianan sa sunog."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Nagbutang og babag sa agianan sa fire truck supak sa balaod sa barangay."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "The road has a deep pothole and the broken streetlight leaves the crossing dark."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "The drainage is clogged and floodwater is entering homes after the rain."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Sira ang tulay at maraming malalim na lubak sa kalsada papunta sa paaralan."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Barado ang kanal kaya bumabaha sa mga bahay tuwing umuulan."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Guba ang dalan ug naay dakong lungag duol sa tulay."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Barado ang kanal ug mosulod ang baha sa among balay kada kusog sa ulan."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "A leaking water pipe has flooded the kitchen and the public faucet is broken."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "May sirang poste ng ilaw na madilim at delikado sa mga dumadaan sa kalsada."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Guba ang suga sa dalan ug dili makita ang mga sakyanan sa gabii."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "A cracked sidewalk and damaged public bridge make travel hazardous."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "May bumigay na kanal at hindi makadaan ang mga tao sa sirang kalsada."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Naay guba nga tulay ug naguba ang semento sa dalan."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "A water main pipe burst and washed away part of the road."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "May tagas ang tubo ng tubig at binaha ang daanan sa aming purok."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Nabuak ang tubo sa tubig ug nagbaha ang karsada."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "An elderly resident is having difficulty breathing and needs an ambulance now."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "Please help a child with a high fever get medical attention at the health center."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "Nahihirapang huminga ang matanda at kailangan ng ambulansya papuntang ospital."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "May batang nilalagnat nang mataas at kailangan dalhin sa health center."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "Lisod ginhawa ang tigulang ug kinahanglan og ambulansya paingon sa ospital."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "Naay bata nga taas kaayo og hilanat ug nanginahanglan og tabang sa health center."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "A resident was injured in an accident and needs a doctor at the clinic."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "May naaksidenteng bata na kailangang dalhin agad sa doktor at ospital."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "Naaksidente ang bata ug kinahanglan dalhon dayon sa doktor para matambalan."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "A person collapsed, feels dizzy, and urgently needs a medical team."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "Nahilo at hinimatay ang aking lola at kailangan niya ng tulong medikal."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "Nagsakit ang iyang dughan ug nanginahanglan siya og tabang medikal."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "A resident is having an asthma attack and needs an ambulance to the hospital."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "Naay inahan nga nanginahanglan og doktor ug tambal karon dayon."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "Nasamdan ang pasyente ug kinahanglan og first aid sa health center."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "The neighbors play loud videoke music all night and keep everyone awake."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "A dog barks continuously at midnight and causes a noise disturbance."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "Napakalakas ng videoke ng kapitbahay gabi-gabi at hindi kami makatulog."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "Maingay ang mga nag-iinuman sa labas hanggang madaling-araw."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "Saba kaayo ang videoke sa silingan tibuok gabii ug dili mi makatulog."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "Sige og paninggit ug patukar og kusog nga musika ang mga silingan sa tungang gabii."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "The nearby bar plays booming music past midnight and disturbs the whole block."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "Napakaingay ng kapitbahay dahil sa malakas na karaoke tuwing madaling-araw."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "Sige og singgit ang silingan sa kaadlawon ug makasamok sa among pagpahulay."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "Loud construction work starts before dawn and keeps the neighborhood awake."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "The sound system at the party is too loud and disturbs nearby homes."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "Kusog kaayo ang sound system sa pista ug dili makapahuway ang mga bata."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "The neighbors keep shouting and playing music late into the night."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "Nag-iingay ang mga aso ng kapitbahay sa madaling-araw at nakakaistorbo."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "May mga nagvivideoke sa kalsada nang napakalakas kahit madaling-araw na."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "A person is selling illegal drugs and shabu near the basketball court."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "Neighbors report that someone is using marijuana and selling drugs in the alley."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "I would like to report suspected drug-related activity in our community and ask the barangay to investigate."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "Residents are concerned about suspicious drug-related activity that may threaten community safety."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "Please investigate a suspected drug-related activity reported by people in our neighborhood."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "May nagbebenta ng shabu at gumagamit ng ilegal na droga malapit sa court."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "May gumagamit ng marijuana at nagbebenta ng droga sa eskinita."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "Namaligya og shabu duol sa basketball court ug nagbaligya og ilegal nga droga."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "Adunay tawo nga nagagamit og marijuana ug namaligya og droga sa among eskina."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "A dealer sells prohibited substances behind the covered court."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "May nagtitinda ng bawal na gamot sa likod ng covered court."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "Naa koy nakita nga namaligya og ilegal nga tambal sa luyo sa covered court."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "People are using methamphetamine and exchanging pills behind the abandoned house."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "A resident reports the sale of narcotics to teenagers near the park."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "May gumagamit ng ipinagbabawal na gamot sa abandonadong bahay."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "May nagbebenta ng narkotiko sa mga kabataan malapit sa parke."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "Naa silay ginabaligya nga ilegal nga droga sa abandonadong balay."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "Nakit-an nga nagbaligya og shabu sa sulod sa abandonadong balay."
+  },
+  {
+    "channel": "Threats",
+    "text": "My neighbor threatened to hurt me but did not touch or attack anyone."
+  },
+  {
+    "channel": "Threats",
+    "text": "A man is intimidating residents and says he will harm them if they report him."
+  },
+  {
+    "channel": "Threats",
+    "text": "There is a drunk person threatening neighbors but no one has been physically attacked."
+  },
+  {
+    "channel": "Threats",
+    "text": "An intoxicated man keeps threatening to hurt neighbors without hitting anyone."
+  },
+  {
+    "channel": "Threats",
+    "text": "The neighbor threatened to beat me if I complained, but never made physical contact."
+  },
+  {
+    "channel": "Threats",
+    "text": "He keeps sending threats and says he will hurt me, but has not attacked me."
+  },
+  {
+    "channel": "Threats",
+    "text": "He sent messages saying he would hurt us, but nobody was struck or injured."
+  },
+  {
+    "channel": "Threats",
+    "text": "May nananakot na sasaktan kami pero wala namang nanakit o nanuntok."
+  },
+  {
+    "channel": "Threats",
+    "text": "Tinakot niya kami at nagbanta na gaganti, pero walang pisikal na pananakit."
+  },
+  {
+    "channel": "Threats",
+    "text": "Nagbanta siya na sasaktan ako bukas ngunit wala siyang aktuwal na pananakit."
+  },
+  {
+    "channel": "Threats",
+    "text": "Paulit-ulit niya akong tinatakot at nagbabantang manakit, pero hindi niya ako sinaktan."
+  },
+  {
+    "channel": "Threats",
+    "text": "Gihulga ko sa silingan nga pasakitan apan wala siya mohikap o mosumbag."
+  },
+  {
+    "channel": "Threats",
+    "text": "Gihadlok ang mga residente ug nag-ingon nga manakit siya apan walay aktuwal nga pag-atake."
+  },
+  {
+    "channel": "Threats",
+    "text": "Gihadlok ko sa tawo ug niingon nga bunalan ko niya apan wala niya ko hilabti."
+  },
+  {
+    "channel": "Threats",
+    "text": "Gihulga ko niya nga pasakitan apan wala pa siya moatake o mohikap nako."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "Someone is posting humiliating lies about me on Facebook and sending abusive messages."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "A classmate keeps cyberbullying my child through online posts and group chats."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "They created a fake social media profile to mock me and share insulting posts."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "I keep receiving abusive messages and public humiliation on Facebook."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "Ipinapahiya ako sa Facebook at paulit-ulit na nagpapadala ng mapanirang mensahe."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "Binubully siya sa group chat at nagpo-post ng masasakit na salita online."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "Gumagawa siya ng pekeng account para ipahiya ako at magpakalat ng kasinungalingan online."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "Pinagkakalat niya sa social media ang mapanirang post tungkol sa akin."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "Gipakaulawan ko sa Facebook ug padad-an og abusadong mensahe sa internet."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "Gibinuangan ug gipangdaot siya sa group chat ug mga post online."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "Naghimo siya og peke nga account ug gipakaulawan ko sa Facebook."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "Gipost sa social media ang bakak ug mga insulto batok nako."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "Someone uses an anonymous account to post insults and embarrassing photos online."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "May anonymous na nagpapadala ng mapanlait na mensahe at larawan sa social media."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "Gipanglibak ko sa Messenger ug gipost ang akong litrato aron pakaulawan."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "My neighbor punched me several times and caused bruises on my face."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "A person slapped and kicked my brother during an argument, causing an injury."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "My husband slapped me twice and left my cheek swollen."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "He struck me with a stick and left a cut and bruises on my arm."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "My coworker hit me in the stomach and I suffered an injury."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Sinuntok at sinampal ako ng kapitbahay kahit wala akong ginagawa."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Sinipa niya ako at sinaktan hanggang magkapasa ang aking braso."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Sinampal ako at namaga ang pisngi ko matapos niya akong saktan."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Sinapak ako sa panga at dumugo ang labi ko."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Sinuntok niya ako sa tiyan at nasaktan ang katawan ko."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Akong gi reklamo si pangalan tungod sige siyag panumbag sa ako bisan wala nako siya gihilabtan."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Gikulata ko sa silingan ug gisumbag sa nawong bisan wala ko nakig-away."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Gipangkulata ko niya kagabii ug sakit kaayo akong lawas."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Giadto ko sa silingan ug gisagpa ko sa nawong."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Gisumbag ko sa akong kauban ug nasamdan ang akong tiyan."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Vehicles are doing illegal parking on the sidewalk and blocking pedestrians."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "May mga sasakyan na nagpaparada sa bawal na lugar kaya nahihirapan ang mga naglalakad."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Bawal magparada sa daplin sa dalan ug nahisamok ang mga naglalakad."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Someone is setting off firecrackers in the middle of the street before midnight."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Vandals damaged the waiting shed and it needs to be repaired."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "May nagvandals sa pader ng barangay hall at kailangan itong ipaayos."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Gi-vandal ang pader sa barangay hall ug kinahanglan nga ipaayos."
+  },
+  {
+    "channel": "Threats",
+    "text": "A man keeps following my sister around the neighborhood and she is scared, but he has not touched her."
+  },
+  {
+    "channel": "Threats",
+    "text": "Older kids keep bullying my son at school and he is afraid to go there."
+  },
+  {
+    "channel": "Threats",
+    "text": "May lalaking sumusunod palagi sa kapatid ko at natatakot siya pero hindi siya hinahawakan."
+  },
+  {
+    "channel": "Threats",
+    "text": "Gisunod sunod siya sa tawo ug mahadlok siya apan wala siya niya hilabti."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "The streetlight in front of our house has been broken for a month."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Ang drainage ay bumaha at umabot sa aming bahay."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Naay sirang streetlight sa dalan ug delikado maglakaw ang mga tawo gabii."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Walang tubig ang aming purok tatlong araw na."
+  },
+  {
+    "channel": "Threats",
+    "text": "A person is harassing me with repeated calls and texts."
+  },
+  {
+    "channel": "Threats",
+    "text": "Someone is spying on my wife and following her."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "My father has chest pain and needs to be brought to the clinic right now."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "The videoke from the store is too loud until 2am and nobody can sleep."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "Someone is selling illegal drugs near the school."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "They created a fake social media account to mock me and post insulting comments."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Two men exchanged punches in front of the store and one was injured."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "May nagsunog ng basura kagabi at mabaho sa aming kalye."
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Someone is burning trash beside the road and the smoke reaches the houses."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "I would like to report an incident of physical harassment or assault involving unwanted physical contact, pushing, hitting, or other forms of physical violence. The incident caused fear, injury, or discomfort to the victim. I request immediate assistance and appropriate action from the barangay authorities."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Physical assault incident with unwanted physical contact, pushing, hitting, and violence."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "Gusto nako i-report ang insidente sa physical assault ug pagpanakit sa lawas diin adunay panukmagay, panumbag, o pagpamunal."
+  },
+  {
+    "channel": "Physical Assault",
+    "text": "May nangyaring pananakit at physical assault, may panununtok at pananakit ng katawan."
+  },
+  {
+    "channel": "Threats",
+    "text": "Gusto nako i-report ang insidente nga adunay hulga batok kanako o sa laing residente. Ang tawo nga nalambigit mihimo og mga pulong o lihok nga naghatag og kahadlok ug kabalaka sa personal nga kaluwasan. Nangayo ko og tabang ug angay nga aksyon gikan sa mga awtoridad sa barangay."
+  },
+  {
+    "channel": "Threats",
+    "text": "Adunay naghulga batok kanako ug naghatag og kahadlok sa akong kaluwasan bisan walay physical assault."
+  },
+  {
+    "channel": "Threats",
+    "text": "I would like to report threat incidents where someone made threatening statements and caused fear and intimidation."
+  },
+  {
+    "channel": "Threats",
+    "text": "Nakatanggap ako ng banta sa aking buhay at pananakot mula sa isang residente."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "akong gi reklamo among silingan kay saba kaayo miskan gabiee na"
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "saba kaayo among silingan bisag gabii na tungod sa videoke o sound system"
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "akong gi reklamo among silingan nga si pangalan tungod kay saba kaayo bisag gabiee ng dako"
+  },
+  {
+    "channel": "Safety Rules",
+    "text": "Gusto nako i-report ang paglapas sa mga lagda sa kaluwasan sa barangay nga mahimong makapeligro sa kahimtang ug kaluwasan sa mga residente."
+  },
+  {
+    "channel": "Damaged Infrastructures",
+    "text": "Gusto nako i-report ang nadaot nga mga pampublikong imprastraktura sama sa dalan, tulay, suga sa kadalanan, o drainage system."
+  },
+  {
+    "channel": "Medical Assistance",
+    "text": "Gusto nako mangayo og medikal nga tabang para sa akong kaugalingon o sa laing residente nga nagkinahanglan og medikal nga pag-atiman."
+  },
+  {
+    "channel": "Noise Complaints",
+    "text": "I would like to report excessive noise coming from a nearby residence or establishment."
+  },
+  {
+    "channel": "Drug Abuse",
+    "text": "Gusto nako i-report ang gidudahang kalihokan nga may kalabotan sa ilegal nga droga sa among komunidad."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "would like to report an incident of cyberbullying involving offensive, humiliating, or threatening messages posted or sent through social media or other online platforms."
+  },
+  {
+    "channel": "Cyberbullying",
+    "text": "Gusto nako i-report ang insidente sa cyberbullying nga naglakip sa makapasakit, makapaulaw, o makahulga nga mga mensahe nga gipost o gipadala pinaagi sa social media."
+  }
+]

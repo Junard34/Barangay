@@ -1,0 +1,43 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+.venv/
+venv/
+
+# Build output
+dist/
+build/
+
+# Vercel
+.vercel/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# SQLite local development database (do NOT commit — contains local data)
+*.db
+database/barangay.db
+
+# Scratch / temporary files
+python_files.txt
+curl
+
+# Large binary / document files (not needed in repo)
+*.docx
+*.xlsx
+
+# Render / local service cache
+.render/

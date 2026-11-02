@@ -1,0 +1,56 @@
+services:
+  # =========================================================================
+  # 1. Node.js Express API Backend
+  # =========================================================================
+  - type: web
+    name: barangay-saray-backend
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install
+    startCommand: node server/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: FRONTEND_URL
+        value: https://thesiscapstone-main.vercel.app
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: ML_SERVICE_URL
+        fromService:
+          type: web
+          name: barangay-saray-ml
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: PHILSMS_ENABLED
+        value: "false"
+      - key: PHILSMS_API_TOKEN
+        sync: false
+      - key: PHILSMS_SENDER_ID
+        sync: false
+      - key: PHILSMS_API_URL
+        value: https://dashboard.philsms.com/api/v3/sms/send
+
+  # =========================================================================
+  # 2. Python FastAPI AI Classification Microservice
+  # =========================================================================
+  - type: web
+    name: barangay-saray-ml
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: pip install -r ml_service/requirements.txt
+    startCommand: uvicorn ml_service.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+
