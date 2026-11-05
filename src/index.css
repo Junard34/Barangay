@@ -13,6 +13,47 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent wide tables from forcing horizontal page scroll on phones. */
+table {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Stack fixed sidebars above content on small screens. */
+@media (max-width: 768px) {
+  .min-h-screen.flex {
+    flex-direction: column;
+  }
+
+  aside.w-64,
+  aside.w-64.shrink-0 {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    height: auto;
+  }
+
+  main.ml-64,
+  main.flex-1 {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 * {
