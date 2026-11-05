@@ -21,7 +21,6 @@ function RegisterPage() {
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
   const [clearanceFile, setClearanceFile] = useState(null);
-  const [photoFile, setPhotoFile] = useState(null);
 
   const { register, logout } = useAuth();
   const navigate = useNavigate();
@@ -68,18 +67,6 @@ function RegisterPage() {
       return;
     }
 
-    if (photoFile) {
-      const allowedPhotoTypes = ['image/jpeg', 'image/png', 'image/webp'];
-      if (!allowedPhotoTypes.includes(photoFile.type)) {
-        setError('Citizen photo must be a JPG, PNG, or WebP image.');
-        return;
-      }
-      if (photoFile.size > 5 * 1024 * 1024) {
-        setError('Citizen photo must be 5 MB or smaller.');
-        return;
-      }
-    }
-
     // Optional mobile number: when provided, it must be a valid PH mobile.
     if (phone.trim()) {
       const phoneDigits = phone.replace(/[\s\-().+]/g, '');
@@ -106,7 +93,6 @@ function RegisterPage() {
         address: address.trim(),
         phone: phone.trim(),
         clearanceFile,
-        photoFile,
       });
 
       /*
@@ -326,20 +312,6 @@ function RegisterPage() {
                 type="file"
                 accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
                 onChange={(e) => setClearanceFile(e.target.files?.[0] || null)}
-                className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white file:mr-3 file:rounded-full file:border-0 file:bg-[#0b3d2e] file:px-4 file:py-2 file:text-white"
-                disabled={loading}
-              />
-            </div>
-
-            {/* Citizen Photo */}
-            <div>
-              <label className="mb-2 block text-sm font-medium text-white/90">
-                Citizen Photo <span className="font-normal text-white/60">(optional)</span>
-              </label>
-              <input
-                type="file"
-                accept="image/jpeg,image/png,image/webp"
-                onChange={(e) => setPhotoFile(e.target.files?.[0] || null)}
                 className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white file:mr-3 file:rounded-full file:border-0 file:bg-[#0b3d2e] file:px-4 file:py-2 file:text-white"
                 disabled={loading}
               />

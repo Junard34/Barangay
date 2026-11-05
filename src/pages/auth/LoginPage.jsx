@@ -34,7 +34,6 @@ export default function LoginPage() {
   const [form, setForm] = useState({
     email: '',
     password: '',
-    role: 'CITIZEN',
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -147,26 +146,6 @@ export default function LoginPage() {
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
-            </div>
-
-            {/* Select Role */}
-            <div>
-              <label className="mb-2 block text-sm font-medium text-white/90">
-                Select Role
-              </label>
-              <select
-                value={form.role}
-                onChange={(event) =>
-                  setForm({ ...form, role: event.target.value })
-                }
-                className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white outline-none transition focus:border-white/50 focus:bg-white/20"
-              >
-                <option value="CITIZEN" className="text-gray-900">Citizen</option>
-                <option value="TANOD" className="text-gray-900">Tanod</option>
-                <option value="OFFICIAL" className="text-gray-900">Official</option>
-                <option value="LUPON" className="text-gray-900">Lupon</option>
-                <option value="ADMIN" className="text-gray-900">Admin</option>
-              </select>
             </div>
 
             {/* Remember Me + Forgot Password */}
