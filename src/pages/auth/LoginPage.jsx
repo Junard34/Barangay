@@ -83,11 +83,7 @@ export default function LoginPage() {
 
   return (
     <div
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white bg-center bg-no-repeat p-6"
-      style={{
-        backgroundImage: "url('/logo.png')",
-        backgroundSize: '300px',
-      }}
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white p-6"
     >
       {/* Login Form */}
       <div className="relative z-10 w-full max-w-md rounded-3xl border-2 border-gray-300 bg-transparent p-8">

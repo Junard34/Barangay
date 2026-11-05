@@ -144,25 +144,9 @@ function RegisterPage() {
 
   return (
     <div
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white bg-center bg-no-repeat p-6"
-      style={{
-        backgroundImage: "url('/logo.png')",
-        backgroundSize: '300px',
-      }}
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white p-6"
     >
       <div className="relative z-10 w-full max-w-md rounded-3xl border-2 border-gray-300 bg-white/40 p-8 backdrop-blur-sm">
-
-        {/* Background Barangay Seal */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center"
-        >
-          <img
-            src="/barangay-seal.png"
-            alt=""
-            className="w-2/3 max-w-[260px] object-contain opacity-[0.05]"
-          />
-        </div>
 
         <div className="relative z-10">
 
