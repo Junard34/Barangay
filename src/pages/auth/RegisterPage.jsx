@@ -1,9 +1,8 @@
-
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { isSupabaseConfigured } from '../../lib/supabase';
-import { Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff, User } from 'lucide-react';
 
 function RegisterPage() {
   const [form, setForm] = useState({
@@ -11,6 +10,7 @@ function RegisterPage() {
     email: '',
     password: '',
     confirmPassword: '',
+    role: 'CITIZEN',
   });
 
   const [error, setError] = useState('');
@@ -21,6 +21,7 @@ function RegisterPage() {
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
   const [clearanceFile, setClearanceFile] = useState(null);
+  const [photoFile, setPhotoFile] = useState(null);
 
   const { register, logout } = useAuth();
   const navigate = useNavigate();
@@ -67,6 +68,18 @@ function RegisterPage() {
       return;
     }
 
+    if (photoFile) {
+      const allowedPhotoTypes = ['image/jpeg', 'image/png', 'image/webp'];
+      if (!allowedPhotoTypes.includes(photoFile.type)) {
+        setError('Citizen photo must be a JPG, PNG, or WebP image.');
+        return;
+      }
+      if (photoFile.size > 5 * 1024 * 1024) {
+        setError('Citizen photo must be 5 MB or smaller.');
+        return;
+      }
+    }
+
     // Optional mobile number: when provided, it must be a valid PH mobile.
     if (phone.trim()) {
       const phoneDigits = phone.replace(/[\s\-().+]/g, '');
@@ -93,6 +106,7 @@ function RegisterPage() {
         address: address.trim(),
         phone: phone.trim(),
         clearanceFile,
+        photoFile,
       });
 
       /*
@@ -143,41 +157,39 @@ function RegisterPage() {
   };
 
   return (
-    <div
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white p-6"
-    >
-      <div className="relative z-10 w-full max-w-md rounded-3xl border-2 border-gray-300 bg-white/40 p-8 backdrop-blur-sm">
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-[#0b3d2e] via-[#1f5e3b] to-[#556b2f] p-6">
+      {/* Soft blurred overlay */}
+      <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
 
-        <div className="relative z-10">
+      <div className="relative z-10 w-full max-w-md">
+        {/* Circular user icon */}
+        <div className="mx-auto -mb-8 flex h-20 w-20 items-center justify-center rounded-full border-4 border-white/30 bg-white/20 backdrop-blur-md shadow-xl">
+          <User className="h-10 w-10 text-white" />
+        </div>
 
-          {/* Header */}
-          <h1 className="mb-1 text-center text-3xl font-bold text-gray-900">
+        {/* Glass card */}
+        <div className="rounded-3xl border border-white/20 bg-white/10 p-8 pt-12 shadow-2xl backdrop-blur-xl">
+          <h1 className="mb-1 text-center text-3xl font-bold text-white">
             Register
           </h1>
 
-          <p className="mb-6 text-center text-sm text-gray-600">
+          <p className="mb-6 text-center text-sm text-white/80">
             Create your Barangay Saray account
           </p>
 
-          {/* Registration Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
-
             {/* Full Name */}
             <div>
-              <label className="mb-2 block px-2 text-sm font-semibold text-gray-800">
+              <label className="mb-2 block text-sm font-medium text-white/90">
                 Full Name
               </label>
-
               <input
                 type="text"
                 value={form.fullName}
                 onChange={(e) =>
-                  setForm({
-                    ...form,
-                    fullName: e.target.value,
-                  })
+                  setForm({ ...form, fullName: e.target.value })
                 }
-                className="w-full rounded-full border border-gray-400 bg-white/70 px-5 py-3 text-gray-900 outline-none focus:border-gray-700"
+                className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white placeholder-white/60 outline-none focus:border-white/50 focus:bg-white/20"
                 placeholder="Enter your full name"
                 disabled={loading}
               />
@@ -185,20 +197,16 @@ function RegisterPage() {
 
             {/* Email */}
             <div>
-              <label className="mb-2 block px-2 text-sm font-semibold text-gray-800">
-                Email
+              <label className="mb-2 block text-sm font-medium text-white/90">
+                Email Address
               </label>
-
               <input
                 type="email"
                 value={form.email}
                 onChange={(e) =>
-                  setForm({
-                    ...form,
-                    email: e.target.value,
-                  })
+                  setForm({ ...form, email: e.target.value })
                 }
-                className="w-full rounded-full border border-gray-400 bg-white/70 px-5 py-3 text-gray-900 outline-none focus:border-gray-700"
+                className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white placeholder-white/60 outline-none focus:border-white/50 focus:bg-white/20"
                 placeholder="Enter your email"
                 disabled={loading}
               />
@@ -206,21 +214,17 @@ function RegisterPage() {
 
             {/* Password */}
             <div>
-              <label className="mb-2 block px-2 text-sm font-semibold text-gray-800">
+              <label className="mb-2 block text-sm font-medium text-white/90">
                 Password
               </label>
-
               <div className="relative">
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={form.password}
                   onChange={(e) =>
-                    setForm({
-                      ...form,
-                      password: e.target.value,
-                    })
+                    setForm({ ...form, password: e.target.value })
                   }
-                  className="w-full rounded-full border border-gray-400 bg-white/70 px-5 py-3 pr-12 text-gray-900 outline-none focus:border-gray-700"
+                  className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 pr-12 text-white placeholder-white/60 outline-none focus:border-white/50 focus:bg-white/20"
                   placeholder="Enter your password"
                   disabled={loading}
                 />
@@ -229,7 +233,7 @@ function RegisterPage() {
                   onClick={() => setShowPassword(!showPassword)}
                   aria-label={showPassword ? 'Hide password' : 'Show password'}
                   title={showPassword ? 'Hide password' : 'Show password'}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-900"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white"
                   disabled={loading}
                 >
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
@@ -239,21 +243,17 @@ function RegisterPage() {
 
             {/* Confirm Password */}
             <div>
-              <label className="mb-2 block px-2 text-sm font-semibold text-gray-800">
+              <label className="mb-2 block text-sm font-medium text-white/90">
                 Confirm Password
               </label>
-
               <div className="relative">
                 <input
                   type={showConfirmPassword ? 'text' : 'password'}
                   value={form.confirmPassword}
                   onChange={(e) =>
-                    setForm({
-                      ...form,
-                      confirmPassword: e.target.value,
-                    })
+                    setForm({ ...form, confirmPassword: e.target.value })
                   }
-                  className="w-full rounded-full border border-gray-400 bg-white/70 px-5 py-3 pr-12 text-gray-900 outline-none focus:border-gray-700"
+                  className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 pr-12 text-white placeholder-white/60 outline-none focus:border-white/50 focus:bg-white/20"
                   placeholder="Confirm your password"
                   disabled={loading}
                 />
@@ -262,24 +262,41 @@ function RegisterPage() {
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   aria-label={showConfirmPassword ? 'Hide confirmation password' : 'Show confirmation password'}
                   title={showConfirmPassword ? 'Hide confirmation password' : 'Show confirmation password'}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-900"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white"
                   disabled={loading}
                 >
                   {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
             </div>
+
+            {/* Select Role */}
+            <div>
+              <label className="mb-2 block text-sm font-medium text-white/90">
+                Select Role
+              </label>
+              <select
+                value={form.role}
+                disabled
+                className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white/70 outline-none"
+              >
+                <option value="CITIZEN" className="text-gray-900">Citizen</option>
+              </select>
+              <p className="mt-1 text-xs text-white/60">
+                Self-registration is available for citizens only.
+              </p>
+            </div>
+
             {/* Address */}
             <div>
-              <label className="mb-2 block px-2 text-sm font-semibold text-gray-800">
+              <label className="mb-2 block text-sm font-medium text-white/90">
                 Address
               </label>
-
               <input
                 type="text"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                className="w-full rounded-full border border-gray-400 bg-white/70 px-5 py-3 text-gray-900 outline-none focus:border-gray-700"
+                className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white placeholder-white/60 outline-none focus:border-white/50 focus:bg-white/20"
                 placeholder="Enter your address"
                 disabled={loading}
               />
@@ -287,53 +304,62 @@ function RegisterPage() {
 
             {/* Mobile Number (optional) */}
             <div>
-              <label className="mb-2 block px-2 text-sm font-semibold text-gray-800">
-                Mobile Number <span className="font-normal text-gray-500">(optional)</span>
+              <label className="mb-2 block text-sm font-medium text-white/90">
+                Mobile Number <span className="font-normal text-white/60">(optional)</span>
               </label>
-
               <input
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full rounded-full border border-gray-400 bg-white/70 px-5 py-3 text-gray-900 outline-none focus:border-gray-700"
+                className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white placeholder-white/60 outline-none focus:border-white/50 focus:bg-white/20"
                 placeholder="09XXXXXXXXX"
                 disabled={loading}
               />
-
-              <p className="mt-2 px-2 text-xs text-gray-600">
-                Used only to send SMS updates about your complaints.
-              </p>
             </div>
 
             {/* Barangay Clearance */}
             <div>
-              <label className="mb-2 block px-2 text-sm font-semibold text-gray-800">
+              <label className="mb-2 block text-sm font-medium text-white/90">
                 Barangay Clearance *
               </label>
-
               <input
                 type="file"
                 accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
                 onChange={(e) => setClearanceFile(e.target.files?.[0] || null)}
-                className="w-full rounded-full border border-gray-400 bg-white/70 px-5 py-3 text-gray-900 outline-none focus:border-gray-700 file:mr-3 file:rounded-full file:border-0 file:bg-gray-900 file:px-4 file:py-2 file:text-white"
+                className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white file:mr-3 file:rounded-full file:border-0 file:bg-[#0b3d2e] file:px-4 file:py-2 file:text-white"
                 disabled={loading}
               />
+            </div>
 
-              <p className="mt-2 px-2 text-xs text-gray-600">
-                Upload a valid Barangay Clearance (PDF, JPG, or PNG; maximum 5 MB).
-              </p>
+            {/* Citizen Photo */}
+            <div>
+              <label className="mb-2 block text-sm font-medium text-white/90">
+                Citizen Photo <span className="font-normal text-white/60">(optional)</span>
+              </label>
+              <input
+                type="file"
+                accept="image/jpeg,image/png,image/webp"
+                onChange={(e) => setPhotoFile(e.target.files?.[0] || null)}
+                className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white file:mr-3 file:rounded-full file:border-0 file:bg-[#0b3d2e] file:px-4 file:py-2 file:text-white"
+                disabled={loading}
+              />
+            </div>
+
+            {/* Notice */}
+            <div className="rounded-xl border border-amber-300/40 bg-amber-500/20 p-3 text-sm text-amber-100">
+              Citizen accounts require admin verification before they can log in.
             </div>
 
             {/* Error Message */}
             {error && (
-              <div className="rounded-xl border border-red-300 bg-red-100 p-3 text-center text-sm text-red-700">
+              <div className="rounded-xl border border-red-300/60 bg-red-500/20 p-3 text-center text-sm text-red-100">
                 {error}
               </div>
             )}
 
             {/* Success Message */}
             {success && (
-              <div className="rounded-xl border border-green-300 bg-green-100 p-3 text-center text-sm text-green-700">
+              <div className="rounded-xl border border-green-300/60 bg-green-500/20 p-3 text-center text-sm text-green-100">
                 {success}
               </div>
             )}
@@ -342,25 +368,22 @@ function RegisterPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-full bg-gray-900 px-4 py-3 font-semibold text-white hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-50"
+              className="w-full rounded-2xl bg-[#0b3d2e] px-4 py-3 font-semibold text-white shadow-md transition hover:bg-[#092f24] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {loading
-                ? 'Creating Account...'
-                : 'Register'}
+              {loading ? 'Creating Account...' : 'Register'}
             </button>
           </form>
 
           {/* Login Link */}
-          <div className="mt-6 text-center text-sm text-gray-700">
+          <div className="mt-6 text-center text-sm text-white/80">
             Already have an account?{' '}
             <Link
               to="/login"
-              className="font-semibold text-gray-900 hover:underline"
+              className="font-semibold text-white transition hover:underline"
             >
               Login
             </Link>
           </div>
-
         </div>
       </div>
     </div>

@@ -407,6 +407,7 @@ export function AuthProvider({ children }) {
     address,
     phone,
     clearanceFile,
+    photoFile,
   }) => {
     const cleanEmail =
       email.trim();
@@ -425,7 +426,17 @@ export function AuthProvider({ children }) {
       reader.readAsDataURL(clearanceFile);
     });
 
-    const { data } = await api.post('/auth/register', {
+    let photoContent = null;
+    if (photoFile) {
+      photoContent = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result).split(',')[1]);
+        reader.onerror = () => reject(new Error('Could not read the citizen photo.'));
+        reader.readAsDataURL(photoFile);
+      });
+    }
+
+    const payload = {
       fullName: cleanName,
       email: cleanEmail,
       password,
@@ -436,7 +447,17 @@ export function AuthProvider({ children }) {
         type: clearanceFile.type,
         content: documentContent,
       },
-    }).catch((error) => {
+    };
+
+    if (photoFile && photoContent) {
+      payload.photo = {
+        name: photoFile.name,
+        type: photoFile.type,
+        content: photoContent,
+      };
+    }
+
+    const { data } = await api.post('/auth/register', payload).catch((error) => {
       const message = error.response?.data?.message || error.message;
       const detail = error.response?.data?.detail;
       const combined =

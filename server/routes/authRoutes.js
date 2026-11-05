@@ -202,7 +202,7 @@ async function loadLoginProfile(authId) {
 }
 
 router.post('/register', async (req, res) => {
-  const { fullName, email, password, address, phone, clearance } = req.body || {};
+  const { fullName, email, password, address, phone, clearance, photo } = req.body || {};
 
   if (!fullName || !email || !password || !address || !clearance?.name || !clearance?.type || !clearance?.content) {
     return res.status(400).json({ message: 'Full name, email, password, address, and Barangay Clearance are required.' });
@@ -268,6 +268,30 @@ router.post('/register', async (req, res) => {
   if (uploadError) {
     await supabaseAdmin.auth.admin.deleteUser(data.user.id);
     return res.status(500).json({ message: `Could not store Barangay Clearance: ${uploadError.message}` });
+  }
+
+  // Optional citizen photo upload (best-effort; does not block registration).
+  if (photo?.content && typeof photo.content === 'string') {
+    try {
+      const photoBuffer = Buffer.from(photo.content, 'base64');
+      const safePhotoName = String(photo.name || 'photo').replace(/[^a-zA-Z0-9._-]/g, '_');
+      const photoPath = `${data.user.id}/${Date.now()}-${safePhotoName}`;
+      const { error: photoUploadError } = await supabaseAdmin.storage
+        .from('citizen-documents')
+        .upload(photoPath, photoBuffer, { contentType: photo.type || 'image/jpeg', upsert: false });
+      if (!photoUploadError) {
+        await supabaseAdmin.auth.admin.updateUserById(data.user.id, {
+          user_metadata: {
+            ...(data.user.user_metadata || {}),
+            photo_path: photoPath,
+          },
+        });
+      } else {
+        console.warn('Citizen photo upload failed:', photoUploadError.message);
+      }
+    } catch (photoError) {
+      console.warn('Citizen photo upload failed:', photoError?.message || photoError);
+    }
   }
 
   const { error: profileError } = await supabaseAdmin.from('users').update({
