@@ -27,6 +27,10 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
+      // Allow local-network (phone) access during development.
+      if (process.env.NODE_ENV !== 'production') {
+        return callback(null, true);
+      }
       if (
         !origin ||
         allowedOrigins.includes(origin) ||

@@ -1,6 +1,12 @@
 import axios from 'axios';
 
-const rawBaseUrl = import.meta.env.VITE_API_URL || '/api';
+const isLocalhost =
+  typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+
+const rawBaseUrl =
+  import.meta.env.VITE_API_URL ||
+  (isLocalhost ? '/api' : 'https://barangay-saray-backend.onrender.com');
 const trimmedBaseUrl = rawBaseUrl.replace(/\/+$/, '');
 const baseURL = trimmedBaseUrl.endsWith('/api') ? trimmedBaseUrl : `${trimmedBaseUrl}/api`;
 
