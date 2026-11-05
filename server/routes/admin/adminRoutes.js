@@ -3,8 +3,8 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import supabase, { getSupabaseAdmin } from '../../supabaseAdmin.js';
 import { db } from '../../database.js';
-import { CHANNEL_ROLE_MAP } from '../../../src/lib/triageService.js';
 import { classifyComplaintWithPython } from '../../lib/mlClassifier.js';
+import { triageComplaint } from '../../../src/lib/triageService.js';
 import { attachEvidence } from '../../lib/evidence.js';
 import { notifyCitizen } from '../../lib/notifyCitizen.js';
 import { normalizePhPhone } from '../../lib/sms.js';
@@ -1468,11 +1468,17 @@ async function resolveWalkinReporterSupabase(reporter) {
 
 async function fileWalkinComplaintSupabase({ reporterRow, description, createdBy }) {
   let triage;
+  let usedFallback = false;
   try {
     triage = await classifyComplaintWithPython(description);
-  } catch (error) {
-    error.status = 503;
-    throw error;
+  } catch (classificationError) {
+    try {
+      triage = triageComplaint(description);
+      usedFallback = true;
+    } catch {
+      classificationError.status = 503;
+      throw classificationError;
+    }
   }
   const { data: channelRow } = await supabase.from('channels').select('id').eq('name', triage.channel).single();
   const { data: categoryRow } = await supabase.from('complaint_categories').select('id').eq('name', triage.category).single();
@@ -1694,11 +1700,17 @@ async function createWalkinComplaintSQLite(req, res, { reporter, description, cr
 
   try {
     let triage;
+    let usedFallback = false;
     try {
       triage = await classifyComplaintWithPython(description);
-    } catch (error) {
-      error.status = 503;
-      throw error;
+    } catch (classificationError) {
+      try {
+        triage = triageComplaint(description);
+        usedFallback = true;
+      } catch {
+        classificationError.status = 503;
+        throw classificationError;
+      }
     }
     const channelRow = await db.get(`SELECT id FROM channels WHERE name = ?`, [triage.channel]);
     const categoryRow = await db.get(`SELECT id FROM complaint_categories WHERE name = ?`, [triage.category]);

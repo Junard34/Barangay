@@ -12,6 +12,14 @@ export default defineConfig({
       '/api': {
         target: 'http://localhost:3001',
         changeOrigin: true,
+        // Backend restarts (node --watch) briefly drop the connection. Swallow
+        // those transient proxy errors instead of spamming the console; the
+        // client already surfaces a retryable failure to the user.
+        configure: (proxy) => {
+          proxy.on('error', () => {
+            // intentionally ignored: transient backend unavailability
+          });
+        },
       },
     },
   },

@@ -32,10 +32,6 @@ export const CATEGORY_GUIDANCE = {
   Threats: 'Threats, intimidation, stalking, or unwanted harassment made in person or through calls and messages, when no physical attack happened.',
   Cyberbullying: 'Online harassment or bullying only, including abusive messages, humiliating posts, repeated insults, or harmful content shared on social media.',
   'Physical Assault': 'A physical attack or violence, such as hitting, punching, kicking, or fighting, when the attack itself is the main concern.',
-  'Theft & Robbery': 'Reports of stolen or taken property, including snatching, burglary, robbery, missing belongings, or thieves operating in the community.',
-  'Scams & Fraud': 'Reports of swindling or dishonesty for money or property, such as estafa, fake sellers, fake products, fake fees, or money schemes.',
-  'Dispute/Conflict': 'Reports of verbal quarrels, family or neighbor disputes, boundary or money disagreements requiring mediation.',
-  'Animal Concerns': 'Reports about stray, loose, or aggressive animals, such as dog bites or animals roaming the road, when urgent medical care is not the main request.',
 };
 
 export const CATEGORY_PRIORITY = {
@@ -47,10 +43,6 @@ export const CATEGORY_PRIORITY = {
   Threats: 'HIGH',
   Cyberbullying: 'HIGH',
   'Physical Assault': 'HIGH',
-  'Theft & Robbery': 'HIGH',
-  'Scams & Fraud': 'MEDIUM',
-  'Dispute/Conflict': 'MEDIUM',
-  'Animal Concerns': 'LOW',
 };
 
 // Which staff role primarily handles each channel (role pools, no fixed roster).
@@ -63,10 +55,6 @@ export const CHANNEL_ROLE_MAP = {
   Threats: 'TANOD',
   Cyberbullying: 'LUPON',
   'Physical Assault': 'TANOD',
-  'Theft & Robbery': 'TANOD',
-  'Scams & Fraud': 'LUPON',
-  'Dispute/Conflict': 'LUPON',
-  'Animal Concerns': 'TANOD',
 };
 
 export const AI_CONFIDENCE_THRESHOLD = 0.65;

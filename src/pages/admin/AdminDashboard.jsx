@@ -8,8 +8,7 @@ import { getAdminAccessToken, authHeaders } from '../../lib/adminAuth';
 import { detectLanguage, CHANNEL_ROLE_MAP } from '../../lib/triageService';
 import api from '../../services/api';
 import { formatComplaintSource } from '../../lib/complaintSource';
-import ComplaintCategoryMap from '../../components/ComplaintCategoryMap';
-import ComplaintCategoryPreview from '../../components/ComplaintCategoryPreview';
+
 import { getComplaintStatusBadgeClass, getComplaintStatusLabel } from '../../lib/complaintStatus';
 import { useComplaintStatusSync } from '../../hooks/useComplaintStatusSync';
 
@@ -2155,8 +2154,6 @@ export default function AdminDashboard() {
                     </ul>
                   )}
                 </div>
-                <ComplaintCategoryPreview description={walkinDesc} />
-                <ComplaintCategoryMap />
               </div>
             </div>
 

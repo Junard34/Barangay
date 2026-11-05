@@ -9,6 +9,7 @@ services:
     region: singapore
     buildCommand: npm install
     startCommand: node server/index.js
+    healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
@@ -50,6 +51,7 @@ services:
     region: singapore
     buildCommand: pip install -r ml_service/requirements.txt
     startCommand: uvicorn ml_service.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9

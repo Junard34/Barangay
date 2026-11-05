@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run ml\"",
     "start": "node server/index.js",
-    "server": "node --watch server/index.js",
+    "server": "node --watch --watch-path=server server/index.js",
     "client": "vite",
     "ml": "node scripts/start-ml-service.js",
     "build": "vite build",
