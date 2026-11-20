@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { isSupabaseConfigured } from '../../lib/supabase';
-import { Eye, EyeOff, User } from 'lucide-react';
+import { Eye, EyeOff } from 'lucide-react';
 
 function RegisterPage() {
   const [form, setForm] = useState({
@@ -148,13 +148,8 @@ function RegisterPage() {
       <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
 
       <div className="relative z-10 w-full max-w-md">
-        {/* Circular user icon */}
-        <div className="mx-auto -mb-8 flex h-20 w-20 items-center justify-center rounded-full border-4 border-white/30 bg-white/20 backdrop-blur-md shadow-xl">
-          <User className="h-10 w-10 text-white" />
-        </div>
-
         {/* Glass card */}
-        <div className="rounded-3xl border border-white/20 bg-white/10 p-8 pt-12 shadow-2xl backdrop-blur-xl">
+        <div className="rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-xl">
           <h1 className="mb-1 text-center text-3xl font-bold text-white">
             Register
           </h1>
@@ -254,23 +249,6 @@ function RegisterPage() {
                   {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
-            </div>
-
-            {/* Select Role */}
-            <div>
-              <label className="mb-2 block text-sm font-medium text-white/90">
-                Select Role
-              </label>
-              <select
-                value={form.role}
-                disabled
-                className="w-full rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white/70 outline-none"
-              >
-                <option value="CITIZEN" className="text-gray-900">Citizen</option>
-              </select>
-              <p className="mt-1 text-xs text-white/60">
-                Self-registration is available for citizens only.
-              </p>
             </div>
 
             {/* Address */}

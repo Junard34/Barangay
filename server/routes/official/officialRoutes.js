@@ -56,6 +56,11 @@ router.get('/complaints', async (req, res) => {
       // Authenticated login with no linked staff profile: nothing is theirs.
       return res.json({ complaints: [] });
     }
+    // Ensure the resolved user actually has the OFFICIAL role.
+    const { data: staffUser } = await supabase.from('users').select('role').eq('id', staffId).maybeSingle();
+    if (String(staffUser?.role || '').toUpperCase() !== 'OFFICIAL') {
+      return res.json({ complaints: [] });
+    }
     if (assigned === 'true') {
       query = query.eq('assigned_to', staffId);
     } else if (team === 'true') {

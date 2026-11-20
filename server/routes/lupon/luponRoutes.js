@@ -66,6 +66,16 @@ router.get('/complaints', async (req, res) => {
       // Authenticated login with no linked staff profile: nothing is theirs.
       return res.json({ complaints: [] });
     }
+    // Ensure the resolved user actually has the LUPON role.
+    const { data: staffUser } = await supabase.from('users').select('role, role_id').eq('id', staffId).maybeSingle();
+    let staffRole = staffUser?.role || null;
+    if (!staffRole && staffUser?.role_id) {
+      const { data: roleRow } = await supabase.from('roles').select('name').eq('id', staffUser.role_id).maybeSingle();
+      staffRole = roleRow?.name || null;
+    }
+    if (String(staffRole || '').toUpperCase() !== 'LUPON') {
+      return res.json({ complaints: [] });
+    }
     if (assigned === 'true') {
       query = query.eq('assigned_to', staffId);
     } else if (team === 'true') {
@@ -145,7 +155,6 @@ router.post('/complaints/:id/hearings', async (req, res) => {
       location: location || '',
       notes: notes || '',
       status: 'SCHEDULED',
-      assigned_members: Array.isArray(assignedMembers) ? JSON.stringify(assignedMembers) : (assignedMembers || null),
     })
     .select('id')
     .single();
@@ -223,10 +232,8 @@ router.put('/complaints/:complaintId/hearings/:hearingId', async (req, res) => {
   if (scheduledDate) updatePayload.scheduled_date = scheduledDate;
   if (scheduledTime) updatePayload.scheduled_time = scheduledTime;
   if (location !== undefined) updatePayload.location = location;
-  if (assignedMembers !== undefined) {
-    updatePayload.assigned_members = Array.isArray(assignedMembers) ? JSON.stringify(assignedMembers) : assignedMembers;
-  }
-  if (result) updatePayload.result = result;
+  // `assigned_members` and `result` are not stored on the hearings table in the
+  // current schema; hearing results are persisted on the complaint instead.
 
   const { error: hearingUpdateError } = await supabase.from('hearings').update(updatePayload).eq('id', req.params.hearingId);
 

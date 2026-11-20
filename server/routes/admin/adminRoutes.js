@@ -1209,8 +1209,8 @@ router.put('/complaints/:id/assign', async (req, res) => {
     return res.status(404).json({ message: 'Assignee not found.' });
   }
   const assigneeRole = await getUserRoleSupabase(supabase, assignedTo);
-  if (assigneeRole !== 'OFFICIAL') {
-    return res.status(400).json({ message: 'Complaints can only be assigned to Barangay Officials.' });
+  if (assigneeRole !== 'OFFICIAL' && assigneeRole !== 'LUPON') {
+    return res.status(400).json({ message: 'Complaints can only be assigned to Barangay Officials or Lupon members.' });
   }
 
   const updatePayload = {

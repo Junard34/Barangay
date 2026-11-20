@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Eye, EyeOff, User } from 'lucide-react';
+import { Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { getDashboardPath } from '../../lib/adminAuth';
 
@@ -87,13 +87,8 @@ export default function LoginPage() {
       <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
 
       <div className="relative z-10 w-full max-w-md">
-        {/* Circular user icon */}
-        <div className="mx-auto -mb-8 flex h-20 w-20 items-center justify-center rounded-full border-4 border-white/30 bg-white/20 backdrop-blur-md shadow-xl">
-          <User className="h-10 w-10 text-white" />
-        </div>
-
         {/* Glass card */}
-        <div className="rounded-3xl border border-white/20 bg-white/10 p-8 pt-12 shadow-2xl backdrop-blur-xl">
+        <div className="rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-xl">
           <h1 className="mb-1 text-center text-3xl font-bold text-white">
             Login
           </h1>

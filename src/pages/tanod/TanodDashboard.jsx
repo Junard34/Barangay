@@ -21,7 +21,6 @@ import {
   Clock,
   CheckCircle,
   AlertCircle,
-  Inbox,
 } from 'lucide-react';
 
 const NAV_SECTIONS = [
@@ -30,7 +29,6 @@ const NAV_SECTIONS = [
     items: [
       { key: 'dashboard', label: 'Dashboard', icon: LayoutGrid },
       { key: 'assigned', label: 'Receive Assigned Complaints', icon: ClipboardList },
-      { key: 'receive', label: 'Receive Walk-in/Online Complaints', icon: Inbox },
       { key: 'hearings', label: 'Hearing Details', icon: Scale },
       { key: 'remarks', label: 'Create Complaint Remarks', icon: MessageSquare },
       { key: 'notifications', label: 'Notifications', icon: Bell, badgeKey: 'unreadNotifs' },
@@ -520,42 +518,6 @@ export default function TanodDashboard() {
               </>
             )}
 
-            {activeNav === 'receive' && (
-              <>
-                <div className="mb-6">
-                  <h1 className="text-2xl font-bold text-slate-900">Receive Walk-in/Online Complaints</h1>
-                  <p className="text-sm text-slate-600">Walk-in and online complaints routed to your channels ({assignedComplaints.length} total)</p>
-                </div>
-                <div className="space-y-4">
-                  {loading ? (
-                    <p className="text-slate-600">Loading complaints...</p>
-                  ) : assignedComplaints.length === 0 ? (
-                    <div className="bg-white rounded-lg border border-slate-200 p-8 text-center">
-                      <p className="text-slate-600">No walk-in or online complaints at this time.</p>
-                    </div>
-                  ) : (
-                    assignedComplaints.map((complaint) => (
-                      <div key={complaint.id} className={`bg-white rounded-lg border p-4 shadow-sm ${getStatusColor(complaint.status)}`}>
-                        <div className="flex items-start justify-between mb-3">
-                          <div>
-                            <p className="font-semibold text-slate-900">{complaint.title}</p>
-                            <p className="text-sm text-slate-600">ID: {complaint.complaint_id}</p>
-                          </div>
-                          <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getPriorityColor(complaint.priority)}`}>{complaint.priority}</span>
-                        </div>
-                        <p className="text-sm text-slate-700 mb-3">{complaint.description}</p>
-                        <div className="flex flex-wrap gap-4 text-sm text-slate-600">
-                          <span>AI Category: <strong>{complaint.channel_name || 'N/A'}</strong></span>
-                          <span>Submission Channel: <strong>{formatComplaintSource(complaint.source)}</strong></span>
-                          <span>Status: <strong>{getComplaintStatusLabel(complaint.status)}</strong></span>
-                          <span>Citizen: <strong>{complaint.citizen_name || 'N/A'}</strong></span>
-                        </div>
-                      </div>
-                    ))
-                  )}
-                </div>
-              </>
-            )}
 
             {activeNav === 'hearings' && (
               <div>
